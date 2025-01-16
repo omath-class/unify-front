@@ -38,12 +38,12 @@ jobs:
         run: npm install 
 
       - name: Build Angular Project
-        run: npm run build
+        run: ng build --prod --base-href "/unify-front/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/unify-front # Substitua por "dist/[nome-do-projeto]" se necessário
+          path: ./dist/unify-front/browser # Substitua por "dist/[nome-do-projeto]" se necessário
 
   # Deployment job
   deploy:
